@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <title>Data survey form</title>
   <meta charset="utf-8">
@@ -48,26 +49,43 @@
 		} 
 	</script>
 <style>
-		.required:after {
+
+.required:after {
 		  content:" *";
 		  color: red;
 		}
 
-		.vertical-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-	}
-	
-	.container {
-  width: 500px;
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+.row:after {
+  content: "";
+  display: table;
   clear: both;
 }
 
-.container input {
-  width: 100%;
-  clear: both;
-}
+@media screen and (max-width: 600px) {
+  .col-25, .col-75, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+
+  
 	  </style>
 
 
@@ -79,50 +97,96 @@
 	<h1 >Data survey form</h1>
 	<h4 >Your data will not be saved</h4>
 		</div>
-	
+	<form>
 		<div class="container">
-				<div class="card card-login mx-auto mt-5">
-				  <div class="card-header">Form</div>
-				  <div class="card-body">
-					<div class="text-center mb-4">
+
 					<p style="color:red;">(*)is required field</p>
 					
-					
-					<form>
-							<div class="form-group">
-							  <div class="form-label-group">
-	<p><label class="required"></label>First Name: <input type ="text" id="firstn" minlength="1" maxlength="40" required/></p>
-	<p><label class="required"></label>Last Name: <input type ="text" id="lastn" minlength="1" maxlength="40" required/></p>
-	<p><label class="required"></label>Address: <input type ="text" id="addr" placeholder="123 example street" minlength="1" maxlength="40" required/>
-	</label><input type ="text" onkeypress="return onlyNumberKey(event)" id="addr" placeholder="zip code" minlength="5" maxlength="5" required/></p>
-	<p><label class="required"></label>Birth date: <input type ="text" id="birth" placeholder="DD/MM/YYYY" required/></p><br>
+	<div class="row">
+		<div class="col-25">
+	<p><label class="required"></label>First Name:
+	</div>
+	<div class="col-75">
+		<input type ="text" id="firstn" minlength="1" maxlength="40" required/></p>
+	</div>
+	</div>
+	
+	<div class="row">
+		<div class="col-25">
+	<p><label class="required"></label>Last Name:
+	</div>
+	<div class="col-75">
+		<input type ="text" id="lastn" minlength="1" maxlength="40" required/></p>
+	</div>
+	</div>
+	
+	<div class="row">
+		<div class="col-25">
+	<p><label class="required"></label>Address: 
+	</div>
+	<div class="col-75">
+	<input type ="text" id="addr" placeholder="123 example street" minlength="1" maxlength="40" required/><br>
+	<input type ="text" onkeypress="return onlyNumberKey(event)" id="addr" placeholder="zip code" minlength="5" maxlength="5" required/></p>
+	</div>
+	</div>
+	
+	<div class="row">
+		<div class="col-25">
+	<p><label class="required"></label>Birth date: 
+	</div>
+	<div class="col-75">
+	<input type ="text" id="birth" placeholder="DD/MM/YYYY" required/></p>
+	</div>
+	</div>
 
-	<p>Education level: 
+	<div class="row">
+		<div class="col-25">
+	<p>Education level:
+		</div>
+	<div class="col-75">
 	<select id="edulev">
 			<option value="High School">High School</option>
 			<option value="College">College</option>
 			<option value="Graduate Studies">Graduate Studies</option>
 			<option value="Ph.D">Ph.D</option>
-		  </select></p><br>
-	<p>Height: (feet, inches) <input type ="text" id="height" placeholder="5'9"/></p>
-	<p><label class="required"></label>Phone: <input type ="text" onkeypress="return onlyNumberKey(event)" id="phone" placeholder="123-45-678" minlength="7" maxlength="7"required></p>
-	<p><label class="required"></label>E-mail: <input type ="email" id="email" placeholder="example@mail.com" required/></p>
+		  </select></p>
+		</div>
+	</div>
 	
-	<div class="vertical-center">
+	<div class="row">
+		<div class="col-25">
+	<p>Height: (feet, inches) 
+		</div>
+	<div class="col-75">
+	<input type ="text" id="height" placeholder="5'9"/></p>
+</div>
+	</div>
+
+	<div class="row">
+		<div class="col-25">
+	<p><label class="required"></label>Phone: 
+	</div>
+	<div class="col-75">
+	<input type ="text" onkeypress="return onlyNumberKey(event)" id="phone" placeholder="123-45-678" minlength="7" maxlength="7"required></p>
+</div>
+	</div>
+
+	<div class="row">
+		<div class="col-25">
+	<p><label class="required"></label>E-mail: 
+	</div>
+	<div class="col-75">
+	<input type ="email" id="email" placeholder="example@mail.com" required/></p>
+</div>
+	</div>
+	
+
 			<input type="checkbox" name="checkbox" value="check" id="agree" required/>
-			<label for="agree"> Agree to  <a href='#'>terms & conditions</a><label class="required"></label>
-		</div></p>
-	
-			
-	
-	 <div class="vertical-center">
-	<div class="g-recaptcha brochure__form__captcha" data-sitekey="6LfxkbIZAAAAAPDJGTKWx9zjVqK7fE9Mo3cdqblU"></div></div><br>
-
-
-	<button  class="button" onclick="testVariable()" >Submit</button> <br /></div>
-
-</form>
-		</div></div></div></div>
+			Agree to  <a href='#'>terms & conditions</a><label class="required"></label></p>
+			<div class="g-recaptcha brochure__form__captcha" data-sitekey="6LfxkbIZAAAAAPDJGTKWx9zjVqK7fE9Mo3cdqblU"></div></p>
+			<button  class="button" onclick="testVariable()" >Submit</button> <br /></div>
+		</div>
+	</form>
 
 <span id="spanResult"></span>
 	
