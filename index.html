@@ -19,7 +19,7 @@
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-	
+  <script src="https://www.google.com/recaptcha/api.js"></script>
 	
 	<script type="text/javascript">
         function testVariable() {
@@ -59,7 +59,15 @@
   align-items: center;
 	}
 	
+	.container {
+  width: 500px;
+  clear: both;
+}
 
+.container input {
+  width: 100%;
+  clear: both;
+}
 	  </style>
 
 
@@ -83,11 +91,11 @@
 					<form>
 							<div class="form-group">
 							  <div class="form-label-group">
-	<p>First Name: <input type ="text" id="firstn" minlength="1" maxlength="40" required/><label class="required"></label></p>
-	<p>Last Name: <input type ="text" id="lastn" minlength="1" maxlength="40" required/><label class="required"></label></p>
-	<p>Address: <input type ="text" id="addr" placeholder="123 example street" minlength="1" maxlength="40" required/><label class="required"></label>
-	</p><input type ="text" onkeypress="return onlyNumberKey(event)" id="addr" placeholder="zip code" minlength="5" maxlength="5" required/><label class="required"></label></p>
-	<p>Birth date: <input type ="text" id="birth" placeholder="DD/MM/YYYY" required/><label class="required"></label></p>
+	<p><label class="required"></label>First Name: <input type ="text" id="firstn" minlength="1" maxlength="40" required/></p>
+	<p><label class="required"></label>Last Name: <input type ="text" id="lastn" minlength="1" maxlength="40" required/></p>
+	<p><label class="required"></label>Address: <input type ="text" id="addr" placeholder="123 example street" minlength="1" maxlength="40" required/>
+	</label><input type ="text" onkeypress="return onlyNumberKey(event)" id="addr" placeholder="zip code" minlength="5" maxlength="5" required/></p>
+	<p><label class="required"></label>Birth date: <input type ="text" id="birth" placeholder="DD/MM/YYYY" required/></p><br>
 
 	<p>Education level: 
 	<select id="edulev">
@@ -95,20 +103,27 @@
 			<option value="College">College</option>
 			<option value="Graduate Studies">Graduate Studies</option>
 			<option value="Ph.D">Ph.D</option>
-		  </select></p>
+		  </select></p><br>
 	<p>Height: (feet, inches) <input type ="text" id="height" placeholder="5'9"/></p>
+	<p><label class="required"></label>Phone: <input type ="text" onkeypress="return onlyNumberKey(event)" id="phone" placeholder="123-45-678" minlength="7" maxlength="7"required></p>
+	<p><label class="required"></label>E-mail: <input type ="email" id="email" placeholder="example@mail.com" required/></p>
+	
+	<div class="vertical-center">
+			<input type="checkbox" name="checkbox" value="check" id="agree" required/>
+			<label for="agree"> Agree to  <a href='#'>terms & conditions</a><label class="required"></label>
+		</div></p>
+	
+			
+	
+	 <div class="vertical-center">
+	<div class="g-recaptcha brochure__form__captcha" data-sitekey="6LfxkbIZAAAAAPDJGTKWx9zjVqK7fE9Mo3cdqblU"></div></div><br>
 
-	<p>Phone: <input type ="text" onkeypress="return onlyNumberKey(event)" id="phone" placeholder="123-45-678" minlength="7" maxlength="7"required><label class="required"></label></p>
-	<p>E-mail: <input type ="email" id="email" placeholder="example@mail.com" required/><label class="required"></label></p>
-	<div class="vertical-center">
-	<input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="option1"  aria-label="..." required/>
-	Agree to <a href='#' data-toggle="modal" data-target="#myLegal">terms & conditions</a><label class="required"></label></p></div><br>
-	<div class="vertical-center">
-	</div>
- </div>
+
 	<button  class="button" onclick="testVariable()" >Submit</button> <br /></div>
+
 </form>
-		</div></div></div>
+		</div></div></div></div>
+
 <span id="spanResult"></span>
 	
 
