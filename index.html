@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Data survey form</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+	
+	
+	<script type="text/javascript">
+        function testVariable() {
+            var first = document.getElementById("firstn").value;          
+			var last = document.getElementById("lastn").value;
+			var address = document.getElementById("addr").value;
+			var birthd = document.getElementById("birth").value;
+			var edulevel = document.getElementById("edulev").value;
+			var heig = document.getElementById("height").value;
+			var phon = document.getElementById("phone").value;
+			var mail = document.getElementById("email").value;
+			var result = ' first: '+first+ ' last: ' + last + ' Address: ' + 
+			address+' Education level: ' + edulevel +' Birth date: '+birthd+
+			' Height: '+heig+' Phone: ' + phon+' E-mail: '+ mail;
+            document.getElementById('spanResult').textContent = result;}
+	</script>
+
+<style>
+		.required:after {
+		  content:" *";
+		  color: red;
+		}
+
+		.vertical-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+	  </style>
+
+
+
+</head>
+<body>
+
+		
+	<h1 style="text-align:center;">Data survey form</h1>
+	<h4 style="text-align:center;">Your data will not be saved</h4>
+
+	<form >
+	<p style="text-align:center;">First Name: <input type ="text" id="firstn" required/><label class="required"></label></p>
+	<p style="text-align:center;">Last Name: <input type ="text" id="lastn" required/><label class="required"></label></p>
+	<p style="text-align:center;">Address: <input type ="text" id="addr" placeholder="123 example street" required/><label class="required"></label></p>
+	<p style="text-align:center;">Birth date: <input type ="text" id="birth" placeholder="DD/MM/YYYY" required/><label class="required"></label></p>
+
+	<p style="text-align:center;">Education level: 
+	<select id="edulev">
+			<option value="High School">High School</option>
+			<option value="College">College</option>
+			<option value="Graduate Studies">Graduate Studies</option>
+			<option value="Ph.D">Ph.D</option>
+		  </select></p>
+	<p style="text-align:center;">Height: (feet, inches) <input type ="text" id="height" placeholder="5'9"/></p>
+
+	<p style="text-align:center;">Phone: <input type ="number" id="phone" placeholder="123-45-678" required><label class="required"></label></p>
+	<p style="text-align:center;">E-mail: <input type ="text" id="email" placeholder="example@mail.com" required/><label class="required"></label></p>
+	<div class="vertical-center">
+	<input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="option1"  aria-label="..." required/>
+	Agree to <a href='#' data-toggle="modal" data-target="#myLegal">terms & conditions</a><label class="required"></label></p></div><br>
+	<div class="vertical-center">
+	<button  class="button" onclick="testVariable()" >Submit</button> <br /></div>
+</form>
+		</div>
+<span id="spanResult"></span>
+	
+
+     
+</body>
+</html>
